@@ -1,9 +1,10 @@
-// CHANGE THIS URL. DONT INCLUDE ?page=
+// CHANGE THIS, don't include ?page=
 const URL_TO_VIEW_KINKSTERS = "https://fetlife.com/p/COUNTRY/STATE/CITY/kinksters";
 const URL_POSTFIX = "?page=";
 const DELAY_BETWEEN_REQUESTS = 10000;
 // Fetlife only shows up to 10,000 users. 20 users per page.
 const MAX_PAGES = 500;
+const START_PAGE = 1;
 
 const parser = new DOMParser();
 
@@ -30,7 +31,10 @@ function sleep(miliseconds) {
 // FETLIFE FUNCTIONS
 function getLabel(fetElement) 
 {
-  return fetElement.getElementsByClassName('text-sm font-bold text-gray-300')[0].textContent;
+  var check1 = fetElement.getElementsByClassName('text-sm font-bold text-gray-300');
+  var check2 = fetElement.getElementsByClassName('link text-base font-bold text-red-500 mr-1');
+  
+  return check1.length > 0 ? check1[0].textContent : check2[0].textContent;
 }
 
 function getLinkToUser(fetElement)
@@ -46,7 +50,8 @@ function getUserName(fetElement)
 
 let allUsers = [];
 
-for (var i=1; i<(MAX_PAGES + 1); i++) {
+for (var i=START_PAGE; i<(MAX_PAGES + 1); i++) {
+  console.log('about to run page: ' + i);
   const urlReturn = getURL(i);
   const htmlDoc = parser.parseFromString(urlReturn, 'text/html');
   const thePage = htmlDoc.getElementById('ptr-main-element').getElementsByTagName('main')[0].getElementsByTagName('div')[2];
@@ -62,7 +67,7 @@ for (var i=1; i<(MAX_PAGES + 1); i++) {
     
     allUsers.push(userObject);
   }
-  console.log('ran page: ' + i + ' Sleeping..');
+  console.log('finished page: ' + i + ' Sleeping..');
   sleep(DELAY_BETWEEN_REQUESTS);
 }
 
