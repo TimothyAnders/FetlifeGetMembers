@@ -1,4 +1,5 @@
-const URL_TO_VIEW_KINKSTERS = "https://fetlife.com/p/canada/manitoba/winnipeg/kinksters";
+// CHANGE THIS URL. DONT INCLUDE ?page=
+const URL_TO_VIEW_KINKSTERS = "https://fetlife.com/p/COUNTRY/STATE/CITY/kinksters";
 const URL_POSTFIX = "?page=";
 const DELAY_BETWEEN_REQUESTS = 10000;
 // Fetlife only shows up to 10,000 users. 20 users per page.
