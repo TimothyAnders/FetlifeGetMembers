@@ -1,4 +1,4 @@
-// CHANGE THIS, don't include ?page=
+// CHANGE THIS to the correct URL. Don't include ?page=
 const URL_TO_VIEW_KINKSTERS = "https://fetlife.com/p/COUNTRY/STATE/CITY/kinksters";
 const URL_POSTFIX = "?page=";
 const DELAY_BETWEEN_REQUESTS = 10000;
