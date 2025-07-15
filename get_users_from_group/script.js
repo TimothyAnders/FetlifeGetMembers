@@ -60,7 +60,7 @@ for (var i=START_PAGE; i<(MAX_PAGES + 1); i++) {
 
   for (const personResult of allPersonResults) {
     const label = personResult.identity;
-    const linkToUser = 'https://fetlife.com/' + personResult.profilePath.replace('.', '/');
+    const linkToUser = 'https://fetlife.com/' + personResult.nickname;
     const usersName = personResult.nickname;
     
     const userObject = { label: label, linkToUser: linkToUser, username: usersName }
