@@ -60,10 +60,11 @@ for (var i=START_PAGE; i<(MAX_PAGES + 1); i++) {
 
   for (const personResult of allPersonResults) {
     const label = personResult.identity;
-    const linkToUser = 'https://fetlife.com/' + personResult.nickname;
+    const linkToUser = 'https://fetlife.com' + personResult.profileUrl;
     const usersName = personResult.nickname;
+	  const location = personResult.location;
     
-    const userObject = { label: label, linkToUser: linkToUser, username: usersName }
+    const userObject = { label: label, linkToUser: linkToUser, username: usersName, location: location }
     
     allUsers.push(userObject);
   }
