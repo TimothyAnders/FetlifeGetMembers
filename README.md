@@ -17,6 +17,6 @@ This script allows you to search users in a city, and categorize them based on g
 
 
 
-If you run `select username, label FROM Users`, you can copy the results and use this find & replace in notepad++ to populate other fields:
-find: `\| (.*?)[ ]+\| (\d+)([A-Z\/ ]*?) (.*?)[ ]+\|`
-replace: `UPDATE Users SET age = \2 WHERE username = '\1'\;UPDATE Users SET gender = '\3' WHERE username = '\1'\;UPDATE Users SET shortTitle = '\4' WHERE username = '\1'\;`   
+If you run `select username, label FROM Users`, you can copy the results and use this find & replace in notepad++ to populate other fields:    
+find: `\| (.*?)[ ]+\| (\d+)([A-Z\/ ]*?) (.*?)[ ]+\|`  
+replace: `UPDATE Users SET age = \2 WHERE username = '\1'\;UPDATE Users SET gender = '\3' WHERE username = '\1'\;UPDATE Users SET shortTitle = '\4' WHERE username = '\1'\;`     
