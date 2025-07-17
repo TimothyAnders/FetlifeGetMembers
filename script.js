@@ -58,8 +58,8 @@ for (const allUsersUnparsed of allUsersUnparsedArray) {
 		const label = personResult.identity;
 		const linkToUser = 'https://fetlife.com' + personResult.profileUrl;
 		const usersName = personResult.nickname;
-		
-		const userObject = { label: label, linkToUser: linkToUser, username: usersName }
+		const location = personResult.location;
+		const userObject = { label: label, linkToUser: linkToUser, username: usersName, location: personResult.location }
 		
 		allUsers.push(userObject);
   }
