@@ -66,3 +66,25 @@ for (const allUsersUnparsed of allUsersUnparsedArray) {
 }
 
 console.log('DONE. ' + allUsers.length + ' amount of users found.');
+
+
+
+/*
+Get Users who you've messaged by opening 'all mail', and scrolling to the bottom then use this:
+var classNameWithUsername = 'link flex-none text-base font-bold leading-normal text-gray-100 hover:text-gray-50 lg:hidden'
+
+var divsWithUsername = Array.from(document.getElementsByTagName('div')).filter((e) => {
+    return e.className.includes(classNameWithUsername);
+}); 
+
+var userNames = divsWithUsername.map((e) => {
+	return e.innerText.trim();
+});
+
+var query = userNames.map((e) => {
+	return `INSERT INTO ProcessedUsers(Username) VALUES ('${e}');`;
+});
+
+query.join('\r\n');
+
+*/
