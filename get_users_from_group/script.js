@@ -1,5 +1,5 @@
 // Use current URL
-const URL_TO_VIEW_KINKSTERS = window.location.href;
+const URL_TO_VIEW_KINKSTERS = window.location.href.includes('?') ? window.location.href.split('?')[0] : window.location.href;
 const URL_POSTFIX = "?page=";
 const DELAY_BETWEEN_REQUESTS = 10000;
 // Fetlife only shows up to 10,000 users. 20 users per page.
@@ -87,3 +87,4 @@ for (var i=START_PAGE; i<(END_PAGE + 1); i++) {
 }
 
 console.log('DONE.');
+
